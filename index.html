@@ -2,29 +2,68 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"
+    />
     <meta name="theme-color" content="#2E7D32" />
-    <title>Groommis — салоны и клиники для питомцев</title>
-    <meta name="description" content="Найдите грумера, ветеринара или зооаптеку рядом с вами. Онлайн-запись в один клик." />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/assets/icons/logo.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" href="/assets/icons/logo-192.png" />
-    <link rel="mask-icon" href="/assets/icons/logo.svg" color="#2E7D32" />
-
-    <!-- PWA -->
-    <link rel="manifest" href="/manifest.json" />
-
-    <!-- Apple PWA метатеги -->
+    <meta name="description" content="Groommis — онлайн-запись в салоны и клиники для питомцев. Груминг, ветеринар, зооаптека рядом с вами." />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Groommis" />
     <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
 
-    <script type="module" crossorigin src="/assets/index-Bvc8Uziq.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BfJbP-aq.css">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Groommis — салоны и клиники для питомцев" />
+    <meta property="og:description" content="Онлайн-запись в салоны и клиники для питомцев. Груминг, ветеринар, зооаптека рядом." />
+    <meta property="og:image" content="/icons/icon-512.png" />
+    <meta property="og:locale" content="ru_RU" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Groommis" />
+    <meta name="twitter:description" content="Онлайн-запись в салоны и клиники для питомцев" />
+    <meta name="twitter:image" content="/icons/icon-512.png" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/icons/icon-512.png" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/icon-120.png" />
+
+    <title>Groommis — салоны и клиники для питомцев</title>
+
+    <!-- Регистрация service worker (только production) -->
+    <script>
+      if (
+        'serviceWorker' in navigator &&
+        !window.location.hostname.includes('localhost') &&
+        !window.location.hostname.includes('127.0.0.1')
+      ) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker
+            .register('/sw.js')
+            .then((reg) => {
+              console.log('[PWA] SW зарегистрирован:', reg.scope);
+            })
+            .catch((err) => {
+              console.warn('[PWA] SW ошибка:', err);
+            });
+        });
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-CA1roQms.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/react-vendor-Zzyqnu5K.js">
+    <link rel="modulepreload" crossorigin href="/assets/utils-nWIOfJjw.js">
+    <link rel="modulepreload" crossorigin href="/assets/supabase-3Te545q_.js">
+    <link rel="modulepreload" crossorigin href="/assets/icons-1F3Z1uE7.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-B9YzLGzc.css">
   </head>
   <body>
     <div id="root"></div>

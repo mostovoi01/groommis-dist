@@ -1,7 +1,7 @@
 {
   "name": "Groommis — салоны и клиники для питомцев",
   "short_name": "Groommis",
-  "description": "Онлайн-запись к грумерам и ветеринарам, медкарта питомца, соцсеть.",
+  "description": "Онлайн-запись в груминг-салоны, ветклиники и к частным мастерам. Дневник питомца с медкартой.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -10,22 +10,28 @@
   "theme_color": "#2E7D32",
   "lang": "ru",
   "dir": "ltr",
-  "categories": ["lifestyle", "medical", "social"],
+  "categories": ["lifestyle", "health", "productivity"],
   "icons": [
     {
-      "src": "/assets/icons/logo-192.png",
+      "src": "/icons/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/assets/icons/logo-512.png",
+      "src": "/icons/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/assets/icons/logo-512.png",
+      "src": "/icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
@@ -35,14 +41,20 @@
     {
       "name": "Карта салонов",
       "short_name": "Карта",
-      "url": "/#/map",
-      "icons": [{ "src": "/assets/icons/logo-192.png", "sizes": "192x192" }]
+      "url": "/",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Мои записи",
+      "short_name": "Записи",
+      "url": "/appointments",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
     },
     {
       "name": "Мои питомцы",
       "short_name": "Питомцы",
-      "url": "/#/pets",
-      "icons": [{ "src": "/assets/icons/logo-192.png", "sizes": "192x192" }]
+      "url": "/pets",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
     }
   ]
 }
